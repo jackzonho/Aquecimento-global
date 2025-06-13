@@ -1,0 +1,291 @@
+/* Import da fonte Montserrat do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+/* Variáveis CSS para cores (facilita a mudança) */
+:root {
+    --primary-color: #319b11; /* Vermelho do logo BF AGRO */
+    --secondary-color: #fafafa; /* Cor dos textos gerais */
+    --dark-bg: #222; /* Fundo do header e footer */
+    --light-bg: #f5f5f5; /* Fundo das seções */
+    --text-light: #fff;
+    --text-dark: #333;
+}
+
+/* Estilos Gerais */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    line-height: 1.7;
+    overflow-x: hidden; /* Evita scroll horizontal indesejado */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* Padding nas laterais para telas menores */
+}
+
+.section {
+    padding: 60px 0;
+    margin-bottom: 30px;
+    background-color: var(--text-light);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-radius: 8px;
+    margin-left: 20px; /* Margem para alinhar com o design */
+    margin-right: 20px;
+}
+
+.section h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+/* Header */
+.main-header {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    padding: 15px 0;
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo .logo-text {
+    color: var(--primary-color);
+    font-size: 1.8em;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-left: 30px;
+}
+
+.main-nav ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+.main-nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section (Banner Principal) */
+.hero-section {
+    background: url('mulher-na-fazenda-com-tablet.jpg') no-repeat center center/cover;
+    position: relative;
+    height: 600px; /* Altura do banner */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 40px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Escurece a imagem */
+}
+
+.hero-content {
+    position: relative; /* Para garantir que o conteúdo fique acima do overlay */
+    z-index: 2;
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 4em;
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+
+.hero-content p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    font-weight: 400;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #31cf12; /* Um tom mais escuro de vermelho */
+    transform: translateY(-2px);
+}
+
+/* Seção de Introdução */
+.introduction-section .intro-grid {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.introduction-section .intro-text {
+    flex: 2;
+}
+
+.introduction-section .intro-text p {
+    margin-bottom: 15px;
+    text-align: justify;
+    font-size: 1.05em;
+    color: #555;
+}
+
+.introduction-section .intro-image {
+    flex: 1;
+    text-align: center;
+}
+
+.introduction-section .intro-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+
+/* Seção de Exemplos (Cards) */
+.card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* Aumenta o espaço entre os cards */
+}
+
+.card {
+    background-color: var(--light-bg); /* Fundo mais claro para os cards */
+    border: 1px solid #eee;
+    border-radius: 10px; /* Cantos mais arredondados */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08); /* Sombra mais pronunciada */
+    width: 320px; /* Largura um pouco maior para os cards */
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px); /* Efeito de elevação mais notável */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 220px; /* Altura maior para as imagens dos cards */
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    color: var(--primary-color);
+    font-size: 1.5em;
+    margin: 0 0 10px 0;
+    padding: 0 15px;
+    font-weight: 600;
+}
+
+.card p {
+    font-size: 1em;
+    color: #555;
+    padding: 0 15px 20px;
+    text-align: justify;
+}
+
+/* Seção Futuro */
+.future-section p {
+    max-width: 900px;
+    margin: 0 auto 15px auto;
+    text-align: justify;
+    font-size: 1.05em;
+    color: #555;
+}
+
+
+/* Footer */
+.main-footer {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 50px;
+    border-top: 3px solid var(--primary-color);
+}
+
+.main-footer p {
+    margin: 0;
+    font-size: 0.95em;
+}
+
+/* Responsividade */
+@media (max-width:
